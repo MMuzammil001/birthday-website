@@ -1,0 +1,831 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: #120914;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+  min-height: 100svh;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(16px, 4vw, 28px);
+  position: relative;
+  overflow: hidden;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: min(900px, 94vw);
+  max-height: 92svh;
+  overflow: auto;
+  padding: clamp(25px, 5vw, 42px) clamp(16px, 4vw, 25px);
+
+  border: 1px solid #ffffff25;
+  border-radius: 28px;
+
+  background: #ffffff0d;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 20px 70px #0008;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.eyebrow {
+  letter-spacing: clamp(2px, 1vw, 5px);
+  text-transform: uppercase;
+  color: #ffb5d2;
+  font-size: clamp(10px, 2.5vw, 13px);
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.title {
+  font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+
+  font-size: clamp(52px, 12vw, 118px);
+  line-height: 0.95;
+
+  margin: 18px 0;
+
+  color: #fff1f7;
+
+  text-shadow:
+    0 0 30px #ff4f91,
+    0 4px 15px #0008;
+
+  font-weight: 700;
+}
+
+.name {
+  font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+
+  font-size: clamp(38px, 8vw, 70px);
+
+  color: #ff8fbb;
+
+  font-style: italic;
+
+  text-shadow: 0 0 22px #ff4f91;
+}
+
+.input {
+  width: min(360px, 90%);
+
+  padding: 16px 20px;
+
+  border-radius: 30px;
+  border: 1px solid #ff9bc3;
+
+  background: #ffffff12;
+
+  color: white;
+
+  text-align: center;
+
+  font-size: 17px;
+
+  outline: none;
+
+  font-family: inherit;
+}
+
+.romantic {
+  font-family: "Georgia", "Times New Roman", serif;
+
+  font-size: clamp(21px, 4vw, 46px);
+
+  line-height: 1.45;
+}
+
+.small {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+  color: #ffd9e7;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.love-btn {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+  border: 1px solid #ff8fbb;
+
+  background: #ff4f9140;
+
+  color: white;
+
+  border-radius: 30px;
+
+  padding: 14px 24px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  margin: 10px;
+
+  transition: 0.25s;
+
+  max-width: 90%;
+
+  touch-action: manipulation;
+}
+
+.love-btn:hover {
+  transform: translateY(-2px);
+  background: #ff4f9180;
+}
+
+.yes {
+  box-shadow: 0 0 25px #ff4f9166;
+}
+
+.no {
+  opacity: 0.8;
+}
+
+/* =====================================================
+   CAKE SECTION — DESKTOP + TABLET
+===================================================== */
+
+.cake-stage {
+  position: relative;
+
+  width: min(100%, 560px);
+
+  /*
+    Extra vertical room keeps
+    candles and cake completely visible.
+  */
+  height: 330px;
+
+  margin: 12px auto 10px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+
+  isolation: isolate;
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+  position: relative;
+
+  display: block;
+
+  /*
+    Main cake size.
+    clamp prevents the cake
+    becoming too large.
+  */
+  font-size: clamp(120px, 23vw, 190px);
+
+  line-height: 1;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+    Tightens emoji spacing.
+  */
+  letter-spacing: -9px;
+
+  /*
+    Keeps the cake exactly
+    in the center.
+  */
+  transform: translateY(8px);
+
+  filter: drop-shadow(0 0 12px #ff8fbb) drop-shadow(0 0 30px #ff4f91);
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+/* =========================
+   LEFT SPARKLE
+========================= */
+
+.cake::before {
+  content: "✨";
+
+  position: absolute;
+
+  left: -34px;
+  top: 22px;
+
+  font-size: 30px;
+
+  letter-spacing: 0;
+
+  animation: sparkle 1.2s infinite;
+
+  z-index: 3;
+}
+
+/* =========================
+   RIGHT SPARKLE
+========================= */
+
+.cake::after {
+  content: "✨";
+
+  position: absolute;
+
+  right: -34px;
+  top: 8px;
+
+  font-size: 30px;
+
+  letter-spacing: 0;
+
+  animation: sparkle 1.2s 0.5s infinite;
+
+  z-index: 3;
+}
+
+/* =========================
+   CANDLES
+========================= */
+
+.flame {
+  display: inline-block;
+
+  position: relative;
+
+  /*
+    Moves the candles upward
+    so they sit on the cake.
+  */
+  top: -2.15em;
+
+  font-size: 0.28em;
+
+  margin: 0 -5px;
+
+  line-height: 1;
+
+  animation: flicker 0.25s infinite alternate;
+
+  z-index: 4;
+}
+
+/* =========================
+   CANDLES OFF
+========================= */
+
+.off .flame {
+  opacity: 0;
+
+  animation: none;
+}
+
+/* =========================
+   CAKE GLOW
+========================= */
+
+.candle-glow {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ff8a3d3d;
+
+  filter: blur(28px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* =========================
+   CAKE HINT
+========================= */
+
+.cake-hint {
+  margin: 0 0 12px;
+
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  color: #ffd5e4;
+}
+
+/* =====================================================
+   BALLOONS
+===================================================== */
+
+.balloon-area {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+
+  bottom: -160px;
+
+  font-size: clamp(55px, 12vw, 95px);
+
+  animation: float 7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+
+  filter: drop-shadow(0 10px 10px #0005);
+}
+
+.balloon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 80px;
+
+  background: #ffffff66;
+
+  left: 50%;
+  top: 82%;
+
+  transform: rotate(2deg);
+
+  transform-origin: top;
+}
+
+.balloon-title {
+  position: relative;
+  z-index: 2;
+}
+
+.balloon-title .title {
+  font-size: clamp(42px, 9vw, 88px);
+}
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+.memory-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 16px;
+
+  margin: 25px 0;
+}
+
+.memory {
+  height: 230px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #241321;
+
+  border: 1px solid #ff8fbb55;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  box-shadow: 0 8px 25px #0006;
+
+  padding: 0;
+
+  font-size: 18px;
+}
+.memory img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  background: #241321;
+}
+.memory span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 30px 10px 10px;
+
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+
+  background: linear-gradient(transparent, #000c);
+}
+/* =====================================================
+   GIFT / HUG
+===================================================== */
+
+.gift {
+  font-size: 110px;
+
+  animation: bob 1.5s infinite;
+}
+
+.hug {
+  font-size: 80px;
+
+  margin: 10px;
+}
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart {
+  position: absolute;
+
+  color: #ff5b98;
+
+  animation: rise 6s linear infinite;
+
+  opacity: 0.7;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes flicker {
+  from {
+    transform: scale(1) rotate(-2deg);
+  }
+
+  to {
+    transform: scale(1.15) rotate(2deg);
+  }
+}
+
+@keyframes sparkle {
+  50% {
+    opacity: 0.35;
+
+    transform: scale(0.8) rotate(10deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(0.75) rotate(-6deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-125svh) scale(1) rotate(15deg);
+
+    opacity: 0;
+  }
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh);
+
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+  .cake-stage {
+    width: 100%;
+
+    height: 320px;
+  }
+
+  .cake {
+    font-size: clamp(115px, 27vw, 180px);
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 12px;
+  }
+  .memory {
+    height: 230px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #241321;
+    border: 1px solid #ff8fbb55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 25px #0006;
+    padding: 0;
+  }
+
+  .memory img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #241321;
+  }
+  .card {
+    width: 96vw;
+
+    max-height: 94svh;
+
+    border-radius: 22px;
+
+    padding: 24px 14px;
+  }
+
+  /* =========================
+     MOBILE CAKE STAGE
+  ========================= */
+
+  .cake-stage {
+    width: 100%;
+
+    /*
+      Large enough vertically
+      for cake + candles.
+    */
+    height: 285px;
+
+    margin: 8px auto 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+  }
+
+  /* =========================
+     MOBILE CAKE
+  ========================= */
+
+  .cake {
+    /*
+      Cake remains large,
+      but scales according
+      to phone width.
+    */
+    font-size: clamp(105px, 30vw, 165px);
+
+    line-height: 1;
+
+    letter-spacing: -6px;
+
+    margin: 0;
+
+    transform: translateY(5px);
+  }
+
+  /* =========================
+     MOBILE LEFT SPARKLE
+  ========================= */
+
+  .cake::before {
+    left: -19px;
+
+    top: 27px;
+
+    font-size: 23px;
+  }
+
+  /* =========================
+     MOBILE RIGHT SPARKLE
+  ========================= */
+
+  .cake::after {
+    right: -19px;
+
+    top: 13px;
+
+    font-size: 23px;
+  }
+
+  /* =========================
+     MOBILE CANDLES
+  ========================= */
+
+  .flame {
+    /*
+      Keeps candles attached
+      to the top of cake.
+    */
+    top: -2.15em;
+
+    font-size: 0.27em;
+
+    margin: 0 -4px;
+  }
+
+  /* =========================
+     MOBILE GLOW
+  ========================= */
+
+  .candle-glow {
+    width: 175px;
+
+    height: 175px;
+
+    filter: blur(24px);
+  }
+
+  /* =========================
+     MOBILE HINT
+  ========================= */
+
+  .cake-hint {
+    font-size: 12px;
+
+    margin: 0 5px 12px;
+
+    line-height: 1.5;
+  }
+
+  /* =========================
+     MOBILE BUTTONS
+  ========================= */
+
+  .love-btn {
+    display: block;
+
+    width: 90%;
+
+    margin: 9px auto;
+
+    padding: 13px 15px;
+
+    font-size: 15px;
+  }
+
+  /* =========================
+     MOBILE MEMORIES
+  ========================= */
+
+  .memory-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .memory {
+    height: 155px;
+
+    padding: 12px;
+
+    font-size: 14px;
+  }
+
+  /* =========================
+     MOBILE BALLOONS
+  ========================= */
+
+  .balloon {
+    font-size: 52px;
+  }
+
+  .balloon::after {
+    height: 55px;
+  }
+
+  /* =========================
+     MOBILE GIFT
+  ========================= */
+
+  .gift {
+    font-size: 85px;
+  }
+
+  .hug {
+    font-size: 65px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+  .card {
+    padding: 20px 10px;
+  }
+
+  .cake-stage {
+    height: 255px;
+  }
+
+  .cake {
+    font-size: clamp(95px, 31vw, 130px);
+
+    letter-spacing: -5px;
+  }
+
+  .cake::before {
+    left: -15px;
+
+    top: 25px;
+
+    font-size: 20px;
+  }
+
+  .cake::after {
+    right: -15px;
+
+    top: 12px;
+
+    font-size: 20px;
+  }
+
+  .candle-glow {
+    width: 145px;
+    height: 145px;
+  }
+
+  .cake-hint {
+    font-size: 11px;
+  }
+}

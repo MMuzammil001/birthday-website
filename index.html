@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Birthday Love</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section id="p1" class="page active">
+      <div class="card">
+        <div class="eyebrow">A little secret for your birthday</div>
+
+        <div class="title">Happy Birthday 🎂</div>
+
+        <p class="small">
+          This little world is locked just for you.<br />
+          Enter the secret password to open my heart.
+        </p>
+
+        <input
+          id="pass"
+          class="input"
+          type="password"
+          placeholder="Our secret password"
+        />
+
+        <br />
+
+        <button class="love-btn yes" onclick="unlock()">
+          Yes, open my heart 💗
+        </button>
+
+        <button class="love-btn no" onclick="tease()">
+          No… I’m too shy 🙈
+        </button>
+
+        <p id="msg" class="small"></p>
+      </div>
+    </section>
+
+    <section id="p2" class="page">
+      <div class="card">
+        <div class="eyebrow">For the girl who makes my world softer</div>
+
+        <div class="name">Happy Birthday, My Love 'Zenab' ❤️</div>
+
+        <p class="romantic">
+          May your smile stay brighter than every candle,<br />
+          and may every dream in your heart find its way to you.
+        </p>
+
+        <button class="love-btn yes" onclick="go(3)">
+          Yes, let me make a wish with you ✨
+        </button>
+
+        <button class="love-btn no" onclick="go(2)">
+          No… I want one more moment 🥺
+        </button>
+      </div>
+    </section>
+
+    <section id="p3" class="page">
+      <div class="card">
+        <div class="eyebrow">Make a wish, beautiful</div>
+
+        <div class="cake-stage">
+          <div class="candle-glow"></div>
+
+          <div id="cake" class="cake">
+            🎂
+            <span class="flame">🕯️</span>
+            <span class="flame">🕯️</span>
+            <span class="flame">🕯️</span>
+          </div>
+        </div>
+
+        <p class="cake-hint">
+          The candles are glowing on your cake ✨ Make your wish, then blow them
+          out.
+        </p>
+
+        <p class="romantic">Ready to make your birthday wish?</p>
+
+        <button class="love-btn yes" onclick="blow()">
+          Yes ❤️ Blow out the candles
+        </button>
+
+        <button class="love-btn no" onclick="go(2)">No 🙈 Not yet</button>
+      </div>
+    </section>
+
+    <section id="p4" class="page">
+      <div class="balloon-area" id="balloons"></div>
+
+      <div class="card balloon-title">
+        <div class="eyebrow">Little wishes floating for you</div>
+
+        <div class="title">Pop My Wishes 🎈</div>
+
+        <p class="romantic">
+          Pop the balloons one by one and uncover a little piece of love. 💕
+        </p>
+
+        <p class="small">Every balloon carries a cute wish just for you. ✨</p>
+
+        <button class="love-btn yes" onclick="go(5)">
+          Yes 💕 Open my love letter
+        </button>
+
+        <button class="love-btn no" onclick="go(4)">
+          No 🥹 Give me more wishes
+        </button>
+      </div>
+    </section>
+
+    <section id="p5" class="page">
+      <div class="card">
+        <div class="eyebrow">A birthday letter</div>
+
+        <p class="romantic">
+          I hope you always know how deeply you are cared for. ❤️<br />
+          When life feels heavy, I hope my love feels like a safe place.<br />
+          When you smile, I hope I get to be one of the reasons.<br />
+          Today is your birthday, but honestly… your presence is a gift to my
+          life. 🌹
+        </p>
+
+        <button class="love-btn yes" onclick="go(6)">
+          Yes 💗 Show me our memories
+        </button>
+
+        <button class="love-btn no" onclick="go(5)">
+          No 😌 Let me read it again
+        </button>
+      </div>
+    </section>
+
+    <!-- THREE PHOTO MEMORIES -->
+    <section id="p6" class="page">
+      <div class="card">
+        <div class="eyebrow">Little pieces of us</div>
+
+        <div class="title memory-title">Our Memories 📸</div>
+
+        <div class="memory-grid">
+          <div class="memory">
+            <img src="memory1.jpg" alt="Our memory 1" />
+            <span>Our first little moment ✨</span>
+          </div>
+
+          <div class="memory">
+            <img src="memory2.jpg" alt="Our memory 2" />
+            <span>That Flowers ❤️</span>
+          </div>
+
+          <div class="memory">
+            <img src="memory3.jpg" alt="Our memory 3" />
+            <span>The moments.. 🫶</span>
+          </div>
+        </div>
+
+        <p class="small">
+          Replace memory1.jpg, memory2.jpg and memory3.jpg with your own three
+          photos.
+        </p>
+
+        <button class="love-btn yes" onclick="go(7)">
+          Yes 🎁 Open your little gift
+        </button>
+
+        <button class="love-btn no" onclick="go(6)">
+          No 🥺 Stay with our memories
+        </button>
+      </div>
+    </section>
+
+    <section id="p7" class="page">
+      <div class="card">
+        <div class="eyebrow">A gift from my heart</div>
+
+        <div class="gift">🎁</div>
+
+        <p class="romantic">
+          My prayer for you: may Allah fill your life with peace, happiness,
+          health, beautiful opportunities and people who truly value your heart.
+          🤲❤️
+        </p>
+
+        <div class="hug">🫂💗</div>
+
+        <p class="small">Sending you the warmest virtual hug.</p>
+
+        <button class="love-btn yes" onclick="go(8)">
+          Yes 💞 One last page
+        </button>
+
+        <button class="love-btn no" onclick="go(7)">
+          No 🤗 I need another hug
+        </button>
+      </div>
+    </section>
+
+    <section id="p8" class="page">
+      <div class="card">
+        <div class="eyebrow">And finally…</div>
+
+        <div class="title">I Love You ❤️</div>
+
+        <p class="romantic">
+          If I could wrap every beautiful feeling into words,<br />
+          I would still run out of words before I finished talking about you. 🌙
+          <br /><br />
+          You are precious. You are loved. You are cared for.
+          <br />
+          And on your birthday, I just want you to smile a little more. 💋🌹🫶✨
+        </p>
+
+        <p style="font-size: 40px">❤️ 🥺 💗 🌹 🫂 💫 🎂</p>
+
+        <button class="love-btn yes" onclick="location.reload()">
+          Yes 💖 Read it from the beginning
+        </button>
+
+        <button
+          class="love-btn no"
+          onclick="alert('No is not accepted when it comes to love 😌❤️')"
+        >
+          No 🙈
+        </button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
